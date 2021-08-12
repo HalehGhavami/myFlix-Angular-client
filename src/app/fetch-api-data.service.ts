@@ -13,14 +13,13 @@ import { map } from 'rxjs/operators';
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://api-myflix.herokuapp.com/';
 
-@Injectable({
-  providedIn: 'root',
-})
-
 // 0 - ==================================================== API Documentation
 //Get API Documentation endpoint: apiUrl/documentation
 //Method: GET
 // Requires Authorization: No
+@Injectable({
+  providedIn: 'root',
+})
 export class GetDocumentationService {
   // Inject HttpClient module to the constructor params
 
@@ -50,6 +49,9 @@ export class GetDocumentationService {
 // Register a User endpoint:apiUrl/users
 // Method: POST
 // Requires Authorization: No
+@Injectable({
+  providedIn: 'root',
+})
 export class UserRegistrationService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
@@ -79,6 +81,9 @@ export class UserRegistrationService {
 // User Login endpoint:apiUrl/login?userName="String"&password="String"
 // Method: POST
 // Requires Authorization: NO
+@Injectable({
+  providedIn: 'root',
+})
 export class UserLoginService {
   // Inject HttpClient module to the constructor params
 
@@ -109,6 +114,9 @@ export class UserLoginService {
 // Get All Movies endpoint:apiUrl/movies
 // Method: GET
 // Requires Authorization: YES
+@Injectable({
+  providedIn: 'root',
+})
 export class GetAllMoviesService {
   // Inject HttpClient module to the constructor params
 
@@ -142,6 +150,9 @@ export class GetAllMoviesService {
 // Get All Movies endpoint: apiUrl/movies/[Title]
 // Method: GET
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class GetMovieService {
   // Inject HttpClient module to the constructor params
 
@@ -175,6 +186,9 @@ export class GetMovieService {
 // Get Director endpoint: apiUrl/movies//director/[Name]
 // Method: GET
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class GetDirectorService {
   // Inject HttpClient module to the constructor params
 
@@ -208,6 +222,9 @@ export class GetDirectorService {
 // Get Genre endpoint: apiUrl/movies/genres/[Genre]
 // Method: GET
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class GetGenreService {
   // Inject HttpClient module to the constructor params
 
@@ -241,6 +258,9 @@ export class GetGenreService {
 // Get User endpoint: apiUrl/users/[Username] (I HAVE TO ADD THIS RUOTE IN MY API!)
 // Method: GET
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class GetUserService {
   // Inject HttpClient module to the constructor params
 
@@ -274,6 +294,9 @@ export class GetUserService {
 // Gets Fav Movies endpoint:apiUrl/users/[Username]/favorites (I HAVE TO ADD THIS RUOTE IN MY API!)
 // Method: GET
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class GetFavMoviesService {
   // Inject HttpClient module to the constructor params
 
@@ -307,6 +330,9 @@ export class GetFavMoviesService {
 // Adds Fav Movie endpoint: apiUrl/users/[Username]/favorites/[MovieID]
 // Method: POST
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class AddFavMoviesService {
   // Inject HttpClient module to the constructor params
 
@@ -340,6 +366,9 @@ export class AddFavMoviesService {
 // Edits endpoint: apiUrl/users/[Username]
 // Method: PUT
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class EditUserService {
   // Inject HttpClient module to the constructor params
 
@@ -373,6 +402,9 @@ export class EditUserService {
 // Delete User endpoint: apiUrl/users/[Username]
 // Method: DELETE
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class DeleteUserService {
   // Inject HttpClient module to the constructor params
 
@@ -406,6 +438,9 @@ export class DeleteUserService {
 // Deletes Fav Movie endpoint: apiUrl/users/[Username]/favorites/[MovieID]
 // Method: DELETE
 // Requires Authorization: Yes
+@Injectable({
+  providedIn: 'root',
+})
 export class DeleteFavMovieService {
   // Inject HttpClient module to the constructor params
 
