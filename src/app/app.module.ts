@@ -16,14 +16,34 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
+
+// User Registration component
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+// User Login component
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
+// User MovieCard component
 import { MovieCardComponent } from './movie-card/movie-card.component';
+// Welcome component
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
+// import RouteModule
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'welcome', component: WelcomePageComponent },
+  { path: 'movies', component: MovieCardComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+];
 @NgModule({
-  declarations: [AppComponent, UserRegistrationFormComponent, UserLoginFormComponent, MovieCardComponent, WelcomePageComponent],
+  declarations: [
+    AppComponent,
+    UserRegistrationFormComponent,
+    UserLoginFormComponent,
+    MovieCardComponent,
+    WelcomePageComponent,
+  ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
