@@ -28,6 +28,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 // import RouteModule
 import { RouterModule, Routes } from '@angular/router';
+// to use icon instead of text for Add to Favorites
+import { MatIconModule } from '@angular/material/icon';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -55,6 +57,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatSnackBarModule,
     FormsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
