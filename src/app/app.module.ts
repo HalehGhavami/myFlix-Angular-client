@@ -8,28 +8,29 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// import Material
+// Angular Material
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms';
+// to use icon instead of text for Add to Favorites
+import { MatIconModule } from '@angular/material/icon';
 
-// User Registration component
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-// User Login component
-import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
-// User MovieCard component
-import { MovieCardComponent } from './movie-card/movie-card.component';
-// Welcome component
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+// Angular Forms
+import { FormsModule } from '@angular/forms';
 
 // import RouteModule
 import { RouterModule, Routes } from '@angular/router';
-// to use icon instead of text for Add to Favorites
-import { MatIconModule } from '@angular/material/icon';
+
+// Custom Component
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
+import { MovieCardComponent } from './movie-card/movie-card.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+
+// Routes
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
