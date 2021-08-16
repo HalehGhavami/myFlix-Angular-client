@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 // Cutom Services
 // This import brings in the API calls we created in 6.2
-import { UserLoginService } from '../fetch-api-data.service';
+import { AppAPI } from '../fetch-api-data.service';
 
 @Component({
   selector: 'app-user-login-form',
@@ -20,7 +20,7 @@ export class UserLoginFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '' };
 
   constructor(
-    public fetchApiData: UserLoginService,
+    public fetchApiData: AppAPI,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
     public router: Router

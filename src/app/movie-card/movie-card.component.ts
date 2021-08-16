@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllMoviesService } from '../fetch-api-data.service';
+import { AppAPI } from '../fetch-api-data.service';
 
 @Component({
   selector: 'app-movie-card',
@@ -9,14 +9,14 @@ import { GetAllMoviesService } from '../fetch-api-data.service';
 export class MovieCardComponent implements OnInit {
   //this array is where the movies returned from the API call will be kept there
   movies: any[] = [];
-  constructor(public fetchApiData: GetAllMoviesService) {}
+  constructor(public fetchApiData: AppAPI) {}
 
   // After implementing the function getMovies(), it's then called in the ngOnInit() lifecycle hook
   ngOnInit(): void {
     this.getMovies();
   }
 
-  //fetch the movies from the GetAllMoviesService with the help of getAllMovies()
+  //fetch the movies from the AppAPI with the help of getAllMovies()
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
