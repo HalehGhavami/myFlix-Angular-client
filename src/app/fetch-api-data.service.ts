@@ -139,7 +139,7 @@ export class AppAPI {
   // Making the API call for the getFavMovies endpoint
   public getFavMovies(Username: any): Observable<any> {
     return this.http
-      .get(apiUrl + `users/${Username}/favMovies`, {
+      .get(apiUrl + `users/${Username}/favorites`, {
         headers: new HttpHeaders({
           Authorization: `Bearer ${this.getToken()}`,
         }),
@@ -155,7 +155,7 @@ export class AppAPI {
   // Making the API call for the addFavMovie endpoint
   public addFavMovie(Username: any, MovieID: any): Observable<any> {
     return this.http
-      .post(apiUrl + `users/${Username}/favMovies/${MovieID}`, {
+      .post(apiUrl + `users/${Username}/favorites/${MovieID}`, {
         headers: new HttpHeaders({
           Authorization: `Bearer ${this.getToken()}`,
         }),
@@ -169,9 +169,9 @@ export class AppAPI {
   // Requires Authorization: Yes
 
   // Making the API call for the EditUser endpoint
-  public editUser(username: string, userDetails: any): Observable<any> {
+  public editUser(Username: string, userDetails: any): Observable<any> {
     return this.http
-      .put(apiUrl + `users//${username}`, userDetails, {
+      .put(apiUrl + `users/${Username}`, userDetails, {
         headers: new HttpHeaders({
           Authorization: `Bearer ${this.getToken()}`,
         }),
@@ -203,7 +203,7 @@ export class AppAPI {
   // Making the API call for the deleteFavMovie endpoint
   public deleteFavMovie(Username: any, MovieID: any): Observable<any> {
     return this.http
-      .delete(apiUrl + `users/${Username}/Movies/${MovieID}`, {
+      .delete(apiUrl + `users/${Username}/favorites/${MovieID}`, {
         headers: new HttpHeaders({
           Authorization: `Bearer ${this.getToken()}`,
         }),
