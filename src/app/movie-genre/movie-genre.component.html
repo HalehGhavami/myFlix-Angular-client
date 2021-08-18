@@ -1,0 +1,20 @@
+<div class="genre-container">
+  <button
+    id="close-button"
+    mat-icon-button
+    color="dark"
+    [mat-dialog-close]="true"
+    style="top: 0; right: 0"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-toolbar>
+    <mat-toolbar-row class="genre-header">
+      <h2 mat-dialog-title class="title">{{ data.Name }}</h2>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-dialog-content class="genre-content">
+    <p>{{ data.Description }}</p>
+  </mat-dialog-content>
+</div>
