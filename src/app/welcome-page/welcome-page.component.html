@@ -1,18 +1,16 @@
 <div class="main-page">
-  <div>
-    <h1>Welcome to myFlix</h1>
-    <p>The <span class="strong-cyan">Angular</span> Client-side for myFlix</p>
-  </div>
-  <div>
-    <button
-      mat-raised-button
-      (click)="openUserRegistrationDialog()"
-      color="primary"
-    >
-      Sign up
-    </button>
-    <button mat-raised-button (click)="openUserLoginDialog()" color="primary">
-      Log in
-    </button>
+  <div class="container">
+    <h1 class="main-page-title">Welcome to <span>myFlix</span></h1>
+
+    <div class="sign-up-wrapper">
+      <button mat-raised-button (click)="openUserRegistrationDialog()">
+        Sign Up
+      </button>
+    </div>
+
+    <div class="log-in-wrapper">
+      <p class="sub-text">Already a member?</p>
+      <button mat-raised-button (click)="openUserLoginDialog()">Log In</button>
+    </div>
   </div>
 </div>

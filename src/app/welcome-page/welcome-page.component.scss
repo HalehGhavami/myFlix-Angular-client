@@ -1,9 +1,50 @@
-.strong-cyan {
-  color: #17a2b8;
+.main-page {
+  background-image: url("movie.jpg");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.main-page-title {
+  font-size: 3em;
   font-weight: 500;
+  margin: 50px 0;
+  color: white;
+  line-height: 50px;
+}
+
+.sub-text {
+  color: lightgrey;
+  font-size: 15px;
+  font-weight: 200;
+  text-align: center;
+  margin-top: 50px;
 }
 
 button {
-  width: 82px;
-  margin: 0.5rem 1rem;
+  color: black;
+  width: 100%;
+  font-weight: 300;
+}
+
+.log-in-wrapper {
+  align-self: flex-start;
+}
+
+.sign-up-wrapper {
+  align-self: flex-end;
+}
+//test
+span {
+  color: red;
 }
