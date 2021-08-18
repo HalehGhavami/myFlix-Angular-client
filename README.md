@@ -1,4 +1,14 @@
-# MyFlixAngularClient
+# myFlix - Angular Client
+
+![App showcase gif](/myFlix-angular-demo.gif)
+
+## Description
+
+This is a single-page application build using Angular that is connected to the my movie-API. Users are able to create an account and browse their favorite movies. They can modify account information, add or remove movies from their list of favorites, or delete their account.
+
+This app is built using the MEAN stack of technlogies, (MongoDB, Angular, Express.js, Node.js). The app uses Angular Material throughout as well.
+
+# Angular details
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
