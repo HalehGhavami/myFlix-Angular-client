@@ -1,0 +1,37 @@
+.syn-container {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+#close-button {
+  align-self: flex-end;
+  color: white;
+  background-color: rgb(27, 29, 36);
+}
+
+.syn-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  align-self: center;
+}
+
+.title {
+  font-size: 1.4em;
+}
+
+.syn-content {
+  max-height: 500px;
+  font-size: 1.3em;
+  line-height: 1.5;
+}
+
+.data {
+  font-size: 14px;
+}
