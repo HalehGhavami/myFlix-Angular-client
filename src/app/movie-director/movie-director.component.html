@@ -1,0 +1,27 @@
+<div class="director-container">
+  <button
+    id="close-button"
+    mat-icon-button
+    color="dark"
+    [mat-dialog-close]="true"
+    style="top: 0; right: 0"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  <mat-toolbar class="director-header">
+    <h2 mat-dialog-title class="title">{{ data.Name }}</h2>
+  </mat-toolbar>
+  <mat-dialog-content class="director-content">
+    <p>{{ data.Bio }}</p>
+    <div>
+      <div class="birth">
+        <h3>BORN</h3>
+        <p>{{ data.Birth }}</p>
+      </div>
+      <div class="death">
+        <h3>DIED</h3>
+        <p>{{ data.Death || "N/A" }}</p>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>
