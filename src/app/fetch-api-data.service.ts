@@ -12,7 +12,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-//Declaring the api url that will provide data for the client app
+/** This variable contains the URL for the API */
 const apiUrl = 'https://api-myflix.herokuapp.com/';
 
 // The following decorator specifies that this services will be available in the root component
@@ -20,11 +20,9 @@ const apiUrl = 'https://api-myflix.herokuapp.com/';
   providedIn: 'root',
 })
 export class AppAPI {
-  // token: string | null = localStorage.getItem('token');
-
-  // Inject HttpClient module to the constructor params
-
-  // This will provide HttpClient to the entire class, making it available via this.http
+  /**Injecting the HttpClient module to the constructor params will provide
+   * HttpClient to the entire class, making it available via this.http
+   */
   constructor(private http: HttpClient, private router: Router) {}
   // Non-typed response extraction
   private extractResponseData(res: Response | {}): Response | {} {
@@ -34,11 +32,14 @@ export class AppAPI {
   }
 
   // 1 - ==================================================== User Registration
-  // Register a User endpoint:apiUrl/users
   // Method: POST
   // Requires Authorization: No
 
-  // Making the api call for the user registration endpoint
+  /**
+   * Register a User endpoint:apiUrl/users
+   * @returns Adds a new user to the database
+   * @param userDetails An object containing the user's inputted info
+   */
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
@@ -47,11 +48,15 @@ export class AppAPI {
   }
 
   // 2 - ==================================================== User Login
-  // User Login endpoint:apiUrl/login?userName="String"&password="String"
   // Method: POST
   // Requires Authorization: NO
 
-  // Making the API call for the User Login endpoint
+  /**
+   * User Login endpoint:apiUrl/login?userName="String"&password="String"
+   * @returns Returns whether or not a user has been authenticated
+   * @param userDetails An object containing the user's inputted info (password
+   * and username)
+   */
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
@@ -60,11 +65,13 @@ export class AppAPI {
   }
 
   // 3 - ==================================================== All Movies
-  // Get All Movies endpoint:apiUrl/movies
   // Method: GET
   // Requires Authorization: YES
 
-  // Making the API call for the getAllMovies endpoint
+  /**
+   * Making the API call for the getAllMovies endpoint:apiUrl/movies
+   * @returns Returns a list of all the movies in the database
+   */
   public getAllMovies(): Observable<any> {
     return this.http
       .get(apiUrl + 'movies', {
@@ -76,11 +83,14 @@ export class AppAPI {
   }
 
   // 4 - ==================================================== Get one movie synopsis by Title
-  // Get All Movies endpoint: apiUrl/movies/[Title]
   // Method: GET
   // Requires Authorization: Yes
 
-  // Making the API call for the getMovie endpoint
+  /**
+   * Making the API call for the getMovie endpoint: apiUrl/movies/[Title]
+   * @returns Returns a movie's data selected by title
+   * @param Title An object containing the movie's title
+   */
   public getMovieByTitle(Title: any): Observable<any> {
     return this.http
       .get(apiUrl + `movies/${Title}`, {
@@ -92,11 +102,14 @@ export class AppAPI {
   }
 
   // 5 - ==================================================== Get Director
-  // Get Director endpoint: apiUrl/movies/director/[Name]
   // Method: GET
   // Requires Authorization: Yes
 
-  // Making the API call for the getDirector endpoint
+  /**
+   * Making the API call for the getDirector endpoint: apiUrl/movies/director/[Name]
+   * @returns Returns the director data
+   * @param Name An object containing the director's name
+   */
   public getDirector(Name: any): Observable<any> {
     return this.http
       .get(apiUrl + `/movies/director/${Name}`, {
@@ -108,11 +121,14 @@ export class AppAPI {
   }
 
   // 6 - ==================================================== Get Genre
-  // Get Genre endpoint: apiUrl/movies/genres/[Genre]
   // Method: GET
   // Requires Authorization: Yes
 
-  // Making the API call for the getGenre endpoint
+  /**
+   * Making the API call for the getGenre endpoint: apiUrl/movies/genres/[Genre]
+   * @returns Returns the genre info
+   * @param Genre An object containing the movie's genre/title
+   */
   public getGenre(Genre: any): Observable<any> {
     return this.http
       .get(apiUrl + `movies/genres/${Genre}`, {
@@ -124,11 +140,15 @@ export class AppAPI {
   }
 
   // 7 - ==================================================== Get User info
-  // Get User endpoint: apiUrl/users/[Username] (I HAVE TO ADD THIS RUOTE IN MY API!)
   // Method: GET
   // Requires Authorization: Yes
 
-  // Making the API call for the getMovie endpoint
+  //
+  /**
+   * Making the API call for the getMovie endpoint: apiUrl/users/[Username]
+   * @returns Returns the user's data
+   * @param Username An object containing the user's name
+   */
   public getUser(Username: any): Observable<any> {
     return this.http
       .get(apiUrl + `users/${Username}`, {
@@ -156,12 +176,14 @@ export class AppAPI {
   // }
 
   // 9 - ==================================================== Add Fav Movies to a User
-  // Adds FavouriteMovie endpoint: apiUrl/users/[Username]/favorites/[MovieID]
   // Method: POST
   // Requires Authorization: Yes
 
-  // Making the API call for the addFavMovie endpoint
-
+  /**
+   * Adds FavouriteMovie endpoint: apiUrl/users/[Username]/favorites/[MovieID]
+   * @returns Returns an array of the movies favoured
+   * @param id The id of the selected movie
+   */
   public addFavorite(id: string): Observable<any> {
     const Username = localStorage.getItem('user');
     return this.http
@@ -174,11 +196,14 @@ export class AppAPI {
   }
 
   // 10 - ==================================================== Edit User
-  // Edits endpoint: apiUrl/users/[Username]
   // Method: PUT
   // Requires Authorization: Yes
 
-  // Making the API call for the EditUser endpoint
+  /**
+   * Enables a user to update their user data, Edits endpoint: apiUrl/users/[Username]
+   * @returns The updated data of the user
+   * @param userDetails An object containing a user's details
+   */
   public editUser(userDetails: any): Observable<any> {
     const Username = localStorage.getItem('user');
     return this.http
@@ -191,11 +216,12 @@ export class AppAPI {
   }
 
   // 11 - ==================================================== Delete User
-  // Delete User endpoint: apiUrl/users/[Username]
   // Method: DELETE
   // Requires Authorization: Yes
 
-  // Making the API call for the DeleteUser endpoint
+  /**
+   * Allows a user to delete their account, endpoint: apiUrl/users/[Username]
+   */
   public deleteUser(): Observable<any> {
     const Username = localStorage.getItem('user');
     return this.http
@@ -208,11 +234,14 @@ export class AppAPI {
   }
 
   // 12 - ==================================================== Delete Fav Movie
-  // Deletes Fav Movie endpoint: apiUrl/users/[Username]/favorites/[MovieID]
   // Method: DELETE
   // Requires Authorization: Yes
 
-  // Making the API call for the deleteFavouriteMovie endpoint
+  /**
+   * Removes a movie to the favoured movies list, endpoint: apiUrl/users/[Username]/favorites/[MovieID]
+   * @returns Returns an array of the movies favoured
+   * @param id The id of the selected movie
+   */
   public removeFavorite(id: string): Observable<any> {
     const Username = localStorage.getItem('user');
     return this.http
